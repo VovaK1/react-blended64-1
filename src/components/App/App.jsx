@@ -1,7 +1,8 @@
 import React from "react";
-import reactLogo from "./assets/react.svg";
-import { SearchForm } from "./components/SearchForm/SearchForm";
-import { List } from "./components/List/List";
+import reactLogo from "../../assets/react.svg";
+import { SearchForm } from "../SearchForm/SearchForm";
+import { List } from "../List/List";
+import { Box, TitleH1 } from "./App.styled";
 
 const stories = [
   {
@@ -24,16 +25,23 @@ const stories = [
 
 function App() {
   return (
-    <div>
+    <Box>
       <div>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a
+          href="https://reactjs.org"
+          target="_blank"
+        >
+          <img
+            src={reactLogo}
+            className="logo react"
+            alt="React logo"
+          />
         </a>
-        <h1>Hacker Stories</h1>
+        <TitleH1>Hacker Stories</TitleH1>
       </div>
       <SearchForm />
       <List stories={stories} />
-    </div>
+    </Box>
   );
 }
 

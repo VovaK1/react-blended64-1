@@ -1,17 +1,32 @@
 import React from "react";
+import { StyledButtonSmall } from "../../App/App.styled";
+import {
+  ListItem,
+  SpanItem,
+} from "./Item.styled";
 
 export const Item = ({
-  story: { title, url, author, num_comments, points },
+  story: {
+    title,
+    url,
+    author,
+    num_comments,
+    points,
+  },
 }) => (
-  <li>
-    <span style={{ width: "40%" }}>
+  <ListItem>
+    <SpanItem width="40%">
       <a href={url}>{title}</a>
-    </span>
-    <span style={{ width: "30%" }}>{author}</span>
-    <span style={{ width: "10%" }}>{num_comments}</span>
-    <span style={{ width: "10%" }}>{points}</span>
-    <span style={{ width: "10%" }}>
-      <button type="button">Dismiss</button>
-    </span>
-  </li>
+    </SpanItem>
+    <SpanItem width="30%">{author}</SpanItem>
+    <SpanItem width="10%">
+      {num_comments}
+    </SpanItem>
+    <SpanItem width="10%">{points}</SpanItem>
+    <SpanItem width="10%">
+      <StyledButtonSmall type="button">
+        Dismiss
+      </StyledButtonSmall>
+    </SpanItem>
+  </ListItem>
 );
